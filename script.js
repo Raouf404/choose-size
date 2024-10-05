@@ -13,9 +13,28 @@ const contentText = document.getElementById("content-text");
 
 // Functions
 function updateContent(index) {
-  contentImage.src = data1[index].src;
-  contentTitle.innerText = data1[index].title;
-  contentText.innerText = data1[index].text;
+  const fadeOutElements = [contentTitle, contentText, contentImage];
+  const fadeInElements = [contentTitle, contentText, contentImage];
+
+  fadeOutElements.forEach((element) => {
+    element.classList.remove("fade-in");
+    element.classList.add("fade-out");
+  });
+
+  contentTitle.addEventListener(
+    "transitionend",
+    function () {
+      contentImage.src = data1[index].src;
+      contentTitle.innerText = data1[index].title;
+      contentText.innerText = data1[index].text;
+
+      fadeInElements.forEach((element) => {
+        element.classList.remove("fade-out");
+        element.classList.add("fade-in");
+      });
+    },
+    { once: true }
+  );
 }
 
 function clearSelectedClass() {

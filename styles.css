@@ -101,6 +101,26 @@ section .select ul li .star {
   font-weight: 600;
 }
 
+/* Javascript related */
+
+#content-image,
+#content-title,
+#content-text {
+  transition: opacity 0.16s ease;
+  -webkit-transition: opacity 0.16s ease;
+  -moz-transition: opacity 0.16s ease;
+  -ms-transition: opacity 0.16s ease;
+  -o-transition: opacity 0.16s ease;
+}
+
+.fade-in {
+  opacity: 1;
+}
+
+.fade-out {
+  opacity: 0;
+}
+
 .selected::after {
   content: "";
   position: absolute;
