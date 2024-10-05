@@ -1,58 +1,42 @@
 // Declarations
 let data1;
-let offer25 = document.getElementById("offer-25");
-let offer100 = document.getElementById("offer-100");
-let offer200 = document.getElementById("offer-200");
-let offer300 = document.getElementById("offer-300");
-let offer400 = document.getElementById("offer-400");
-let contentImage = document.getElementById("content-image");
-let contentTitle = document.getElementById("content-title");
-let contentText = document.getElementById("content-text");
+const offers = [
+  document.getElementById("offer-25"),
+  document.getElementById("offer-100"),
+  document.getElementById("offer-200"),
+  document.getElementById("offer-300"),
+  document.getElementById("offer-400"),
+];
+const contentImage = document.getElementById("content-image");
+const contentTitle = document.getElementById("content-title");
+const contentText = document.getElementById("content-text");
 
 // Functions
-function button(buttonId) {
-  contentImage.src = data1[buttonId].src;
-  contentTitle.innerText = data1[buttonId].title;
-  contentText.innerText = data1[buttonId].text;
+function updateContent(index) {
+  contentImage.src = data1[index].src;
+  contentTitle.innerText = data1[index].title;
+  contentText.innerText = data1[index].text;
 }
 
 function clearSelectedClass() {
-  let buttons = [offer25, offer100, offer200, offer300, offer400];
-  buttons.forEach(button => button.classList.remove("selected"));
+  offers.forEach((button) => button.classList.remove("selected"));
 }
 
 // Event listeners
-offer25.addEventListener("click", () => {
-  clearSelectedClass();
-  button(0);
-  offer25.classList.add("selected");
-});
-offer100.addEventListener("click", () => {
-  clearSelectedClass();
-  button(1);
-  offer100.classList.add("selected");
-});
-offer200.addEventListener("click", () => {
-  clearSelectedClass();
-  button(2);
-  offer200.classList.add("selected");
-});
-offer300.addEventListener("click", () => {
-  clearSelectedClass();
-  button(3);
-  offer300.classList.add("selected");
-});
-offer400.addEventListener("click", () => {
-  clearSelectedClass();
-  button(4);
-  offer400.classList.add("selected");
+offers.forEach((offer, index) => {
+  offer.addEventListener("click", () => {
+    clearSelectedClass();
+    updateContent(index);
+    offer.classList.add("selected");
+  });
 });
 
 // Main
-function main(data) {
-  contentImage.src = data[0].src;
-  contentTitle.innerText = data[0].title;
-  contentText.innerText = data[0].text;
+function main() {
+  updateContent(0);
+  if (offers.length > 0) {
+    offers[0].classList.add("selected");
+  }
 }
 
 // Main function call
