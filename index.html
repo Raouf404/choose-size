@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="./styles.css" />
     <title>Choose size</title>
+    <script src="./script.js" defer></script>
   </head>
   <body>
     <!-- Code before -->
@@ -14,33 +15,30 @@
         <div class="list-container">
           <ul>
             <li>
-              <button>25<span class="star">*</span></button>
+              <button id="offer-25">25<span class="star">*</span></button>
             </li>
             <li>
-              <button>100<span class="star">*</span></button>
+              <button id="offer-100">100<span class="star">*</span></button>
             </li>
             <li>
-              <button>200<span class="star">*</span></button>
+              <button id="offer-200">200<span class="star">*</span></button>
             </li>
             <li>
-              <button>300<span class="star">*</span></button>
+              <button id="offer-300">300<span class="star">*</span></button>
             </li>
             <li>
-              <button>400<span class="star">*</span></button>
+              <button id="offer-400">400<span class="star">*</span></button>
             </li>
           </ul>
         </div>
       </div>
       <div class="content">
         <div class="offer-image">
-          <img src="./assets/25.png" alt="Customize your drink" />
+          <img id="content-image" />
         </div>
         <div class="offer-text">
-          <h3 id="content-title">Customize your drink</h3>
-          <p title="content-text">
-            Make your drink just right with an extra espresso shot, nondairy
-            milk or a dash of your favorite syrup.
-          </p>
+          <h3 id="content-title"></h3>
+          <p id="content-text"></p>
         </div>
       </div>
     </section>
