@@ -50,7 +50,22 @@ section .select ul {
 }
 
 section .select ul li {
+  position: relative;
   flex: 1;
+}
+
+.underline {
+  z-index: 2;
+  position: absolute;
+  display: none;
+  bottom: 0;
+  width: 100%;
+  height: 5px;
+  background-color: #00754a;
+}
+
+.selected + .underline {
+  display: block;
 }
 
 section .select ul li button {
@@ -106,11 +121,11 @@ section .select ul li .star {
 #content-image,
 #content-title,
 #content-text {
-  transition: opacity 0.16s ease;
-  -webkit-transition: opacity 0.16s ease;
-  -moz-transition: opacity 0.16s ease;
-  -ms-transition: opacity 0.16s ease;
-  -o-transition: opacity 0.16s ease;
+  transition: opacity 0.2s ease;
+  -webkit-transition: opacity 0.2s ease;
+  -moz-transition: opacity 0.2s ease;
+  -ms-transition: opacity 0.2s ease;
+  -o-transition: opacity 0.2s ease;
 }
 
 .fade-in {
@@ -119,13 +134,4 @@ section .select ul li .star {
 
 .fade-out {
   opacity: 0;
-}
-
-.selected::after {
-  content: "";
-  position: absolute;
-  bottom: 0;
-  width: 100%;
-  height: 5px;
-  background-color: #00754a;
 }
